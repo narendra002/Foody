@@ -1,13 +1,42 @@
 [{
     "name": "Offer1",
-    "path": "/Offers/Combooffer-amico.svg"
+    "path": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_850,h_504/rng/md/carousel/production/318cab799713a9739a56dc9d24659a8e "
   },
   {
     "name": "Offer2",
-    "path": "/Offers/Combooffer-pana.svg"
+    "path": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_850,h_504/rng/md/carousel/production/90b990bd1dc16bba234f5002627f71d3"
   },
   {
     "name": "Offer3",
     "path": "/Offers/Combooffer-rafiki.svg"
+  },
+  {
+    "name":"Offer4",
+    "path":"/Offers/Combooffer-pana.svg"
+  }
+  ,
+  {
+    "name":"Offer5",
+    "path":"/Offers/Combooffer-amico.svg"
+  },{
+    "name": "Offer1",
+    "path": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_850,h_504/rng/md/carousel/production/318cab799713a9739a56dc9d24659a8e "
+  },
+  {
+    "name": "Offer2",
+    "path": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_850,h_504/rng/md/carousel/production/90b990bd1dc16bba234f5002627f71d3"
+  },
+  {
+    "name": "Offer3",
+    "path": "/Offers/Combooffer-rafiki.svg"
+  },
+  {
+    "name":"Offer4",
+    "path":"/Offers/Combooffer-pana.svg"
+  }
+  ,
+  {
+    "name":"Offer5",
+    "path":"/Offers/Combooffer-amico.svg"
   }
 ]  

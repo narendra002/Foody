@@ -7,7 +7,9 @@ import SignUp from './Component/SignUp';
 
 import Landing from './Component/Landing'
 import { useSelector } from 'react-redux';
-import HeroSectionSlider from './Component/HeroSectionSlider';
+
+import Offer from './Component/Offer';
+import Help from './Component/Help';
 
 function App() {
   const isLoggedIn = useSelector((state) => state.auth.isAuthenticated);
@@ -17,11 +19,12 @@ function App() {
     <Router>
       <Nav />
       <Routes>
-        <Route path="/" element={<HeroSectionSlider />} />
+        <Route path="/" element={<Offer />} />
         <Route
           path="/login"
           element={ <Login />}
         />
+        <Route path='/help' element={<Help/>}/>
         <Route
           path="/signup"
           element={<SignUp />}

@@ -34,36 +34,22 @@ export const signup = async (email, username, password,isAdmin) => {
 };
 
 
-// Function to make a loan creation request
-export const createLoan = async (loanData) => {
-  try {
-    const response = await axios.post(`${BASE_URL}/api/loan/create`, loanData);
-    toast.success('Loan created successfully');
-    return response.data; // Assuming your server returns a success message or loan data
-  } catch (error) {
-    throw error;
+export const fetchFood = async ()=>{
+
+  
+const options = {
+  method: 'GET',
+  url: 'https://the-mexican-food-db.p.rapidapi.com',
+  headers: {
+    'X-RapidAPI-Key': 'daf28e7362msh91b4b87fd82b2afp1d9b4ejsnd2ef8e545828',
+    'X-RapidAPI-Host': 'the-mexican-food-db.p.rapidapi.com'
   }
 };
 
-// Function to fetch loans belonging to a customer
-export const fetchCustomerLoans = async (userId) => {
-  try {
-    const response = await axios.get(`${BASE_URL}/api/loan/customer-loans?userId=${userId}`);
-    const loans = response.data;
-    // console.log(loans);
-    return loans; // Assuming your server returns a list of loans
-  } catch (error) {
-    throw error;
-  }
-};
-
-export const fetchAllCustomerLoans = async (userId) => {
-  try {
-    const response = await axios.get(`${BASE_URL}/api/loan/customer-loans?userId=${userId}`);
-    const loans = response.data;
-    // console.log(loans);
-    return loans; // Assuming your server returns a list of loans
-  } catch (error) {
-    throw error;
-  }
-};
+try {
+	const response = await axios.request(options);
+	console.log(response.data);
+  return response
+} catch (error) {
+	console.error(error);
+}}

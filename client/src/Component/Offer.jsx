@@ -1,21 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
-import Data from './Data.json';
-
+import Data from "./Data.json"
 import { Card, CardBody, Image } from '@nextui-org/react';
+import Variety from './Variety';
+import Restaurent from './Restaurent';
 
 function HeroCard({ data }) {
   return (
     <Card shadow="md">
-      <CardBody className="overflow-visible ">
+      <CardBody className="overflow-visible">
         <Image
           shadow="sm"
           radius="lg"
           alt={data.title}
-          className="object-fill h-48  w-96 "
+          className="object-fit h-48 w-96"
           src={data.path}
         />
       </CardBody>
@@ -23,29 +24,37 @@ function HeroCard({ data }) {
   );
 }
 
-function HeroSectionSlider() {
+export default function Offer() {
+
   const swiperParams = {
     navigation: true,
     modules: [Navigation],
+    mousewheel: true,
     breakpoints: {
-      1024: {
-        slidesPerView: 4, // Number of slides per view on screens with width >= 1024px
+      640: {
+        slidesPerView: 1,
       },
-      // Add more breakpoints as needed
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
     },
   };
 
   return (
-    <div>
+    <div className="mx-auto px-4 sm:px-6 lg:px-8 w-full max-w-7xl">
+      <h1 className="text-2xl font-bold mb-4">Best Offers For You</h1>
       <Swiper {...swiperParams} className="w-full">
         {Data.map((item, id) => (
-          <SwiperSlide key={id} className="flex items-center justify-center mx-10 my-10">
+          <SwiperSlide key={id} className="flex items-center justify-center mx-1 my-4 sm:my-6 lg:my-8">
             <HeroCard data={item} />
           </SwiperSlide>
         ))}
       </Swiper>
+      <Variety/>
+      <Restaurent/>
     </div>
   );
 }
-
-export default HeroSectionSlider;
