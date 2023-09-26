@@ -10,6 +10,7 @@ import { useSelector } from 'react-redux';
 
 import Offer from './Component/Offer';
 import Help from './Component/Help';
+import SearchBar from './Component/SearchBar';
 
 function App() {
   const isLoggedIn = useSelector((state) => state.auth.isAuthenticated);
@@ -29,6 +30,7 @@ function App() {
           path="/signup"
           element={<SignUp />}
         />
+        <Route path="/search" element={<SearchBar/>}/>
       </Routes>
     </Router>
   );

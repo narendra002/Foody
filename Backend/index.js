@@ -4,7 +4,7 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const signupRoute = require('./Routes/SignUp');
 const loginRoute = require('./Routes/Login');
-
+const restaurentRoute =require('./Routes/Restaurent')
 dotenv.config();
 const app = express();
 
@@ -30,7 +30,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 // Routes
 app.use('/api', signupRoute); // Register a new user
 app.use('/api', loginRoute);  // Login
-
+app.use('/api', restaurentRoute);
 const port = process.env.PORT || 3000;
 app.get('/', (req, res) => {
   res.send('Hello, World!');
