@@ -2,8 +2,8 @@
 import axios from 'axios';
 import { toast } from 'react-toastify'; // Import toast from react-toastify
 
-const BASE_URL = 'https://foodyapi.vercel.app'; // Replace with your actual API URL
-
+// const BASE_URL = 'http://localhost:3000'; // Replace with your actual API URL
+const BASE_URL = 'https://foodyapi.vercel.app'; 
 // Function to make a login request
 export const login = async (email, password) => {
   try {
