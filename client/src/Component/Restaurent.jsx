@@ -7,6 +7,7 @@ import Data from "./Data.json"
 import { Card, CardBody, CardFooter, Image } from '@nextui-org/react';
 
 function HeroCard({ data }) {
+  
   return (
     <div className="p-2">
       <Card shadow="sm" isPressable onPress={() => console.log("item pressed")} className="h-full">

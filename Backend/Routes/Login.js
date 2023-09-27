@@ -4,7 +4,10 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../Models/User');
-const secretKey = "JayShreeRam"; // Replace with a strong secret key
+require('dotenv').config(); // Load environment variables
+
+
+const secretKey = process.env.SECRET;// Replace with a strong secret key
 
 // Login
 router.post('/login', async (req, res) => {

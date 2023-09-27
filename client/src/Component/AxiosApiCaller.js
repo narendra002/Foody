@@ -35,21 +35,10 @@ export const signup = async (email, username, password,isAdmin) => {
 
 
 export const fetchFood = async ()=>{
-
-  
-const options = {
-  method: 'GET',
-  url: 'https://the-mexican-food-db.p.rapidapi.com',
-  headers: {
-    'X-RapidAPI-Key': 'daf28e7362msh91b4b87fd82b2afp1d9b4ejsnd2ef8e545828',
-    'X-RapidAPI-Host': 'the-mexican-food-db.p.rapidapi.com'
-  }
-};
-
 try {
-	const response = await axios.request(options);
+	const response = await axios.get(`${BASE_URL}/api/get_allmenus`);
 	console.log(response.data);
-  return response
+  return response.data
 } catch (error) {
 	console.error(error);
 }}

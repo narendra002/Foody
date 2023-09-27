@@ -1,11 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const dotenv = require('dotenv');
+
 const signupRoute = require('./Routes/SignUp');
 const loginRoute = require('./Routes/Login');
 const restaurentRoute =require('./Routes/Restaurent')
-dotenv.config();
+const menuRoute=require('./Routes/MenuR')
+require('dotenv').config(); // Load environment variables
+
 const app = express();
 
 app.use(express.json());
@@ -31,6 +33,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 app.use('/api', signupRoute); // Register a new user
 app.use('/api', loginRoute);  // Login
 app.use('/api', restaurentRoute);
+app.use('/api', menuRoute);
 const port = process.env.PORT || 3000;
 app.get('/', (req, res) => {
   res.send('Hello, World!');
